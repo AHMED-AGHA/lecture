@@ -10,7 +10,6 @@ class MyDropdownButton extends StatefulWidget {
 class _MyDropdownButtonState extends State<MyDropdownButton> {
   String? selectedValue;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,15 +27,14 @@ class _MyDropdownButtonState extends State<MyDropdownButton> {
             style: GoogleFonts.cairo(
                 color: const Color(0xff04b8673), fontWeight: FontWeight.bold),
             borderRadius: BorderRadius.circular(10),
-            items: textForChip.map((group) {
+            items: textForChip.map((valuefromlist) {
               return DropdownMenuItem(
-                  value: group,
-                  child: Text(group),
-                  onTap: () {
-                    selectedValue = group;
-                  });
+                  value: valuefromlist,
+                  child: Text(valuefromlist),
+                  );
             }).toList(),
             onChanged: (String? value) {
+              //print(value);
               setState(() {
                 selectedValue = value;
               });

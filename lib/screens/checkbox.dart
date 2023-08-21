@@ -33,40 +33,41 @@ class _MyCheckboxState extends State<MyCheckbox> {
             const Divider(
               thickness: 2,
             ),
-            ...checkBoxList
-                .map((item) => ListTile(
-                      onTap: () => onItemClicked(item),
-                      leading: Checkbox(
-                        value: item.value,
-                        onChanged: (value) => onItemClicked(item),
-                      ),
-                      title: Text(
-                        item.title,
-                        style: GoogleFonts.lato(fontWeight: FontWeight.bold),
-                      ),
-                    ))
-                .toList()
+            ...checkBoxList.map((item) {
+              return ListTile(
+                onTap: () => onItemClicked(item),
+                leading: Checkbox(
+                  value: item.value,
+                  onChanged: (value) => onItemClicked(item),
+                ),
+                title: Text(
+                  item.title,
+                  style: GoogleFonts.lato(fontWeight: FontWeight.bold),
+                ),
+              );
+            }).toList()
           ],
         ));
   }
 
   onAllClicked(CheckBoxModel checkBoxModel) {
     final val = !checkBoxModel.value;
+
     setState(() {
       checkBoxModel.value = val;
     });
     checkBoxList.forEach((element) {
-      element.value = val;
+      element.value =val;
     });
   }
 
   onItemClicked(CheckBoxModel checkBoxModel) {
-    final valItem = !checkBoxModel.value;
+    // final valItem = !checkBoxModel.value;
 
     setState(() {
-      checkBoxModel.value = valItem;
+      checkBoxModel.value = !checkBoxModel.value;
     });
-
+    //
     final allListChecked = checkBoxList.every((element) => element.value);
     allChecked.value = allListChecked;
   }

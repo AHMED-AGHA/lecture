@@ -9,6 +9,13 @@ class ChipsWidget extends StatefulWidget {
 }
 
 class _ChipsWidgetState extends State<ChipsWidget> {
+  List<String> textForChip = [
+    "Flutter",
+    "Laravel",
+    "Frontend",
+    "c++",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +32,15 @@ class _ChipsWidgetState extends State<ChipsWidget> {
             itemCount: textForChip.length,
             itemBuilder: (context, index) {
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Chip(
                   backgroundColor: const Color(0xff4D97AE),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                      borderRadius: BorderRadius.circular(12)),
                   label: Text(textForChip[index]),
-                  avatar: const Icon(Icons.biotech),
+                  avatar: const Icon(Icons.category),
+                  deleteIcon: Icon(Icons.delete_rounded),
+                  deleteIconColor: Colors.redAccent,
                   onDeleted: () {
                     setState(() {
                       textForChip.removeAt(index);

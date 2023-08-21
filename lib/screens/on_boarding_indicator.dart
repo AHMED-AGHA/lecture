@@ -13,12 +13,17 @@ class OnBoardingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 18,
-      height: 4,
+      width: 12,
+      height: 12,
       margin: EdgeInsetsDirectional.only(end: _marginEnd),
       decoration: BoxDecoration(
-          color: _isSelected ? Color(0xff6A90F2) : Color(0xffDDDDDD),
-          borderRadius: BorderRadius.circular(2)),
+           color: _isSelected ? const Color(0xff6A90F2) : const Color(0xffDDDDDD),
+          // color: switch (_isSelected) {
+          //   true => Colors.green,
+          //   false => Colors.redAccent,
+          //   _ => Colors.black87
+          // },
+          borderRadius: BorderRadius.circular(6)),
     );
   }
 }

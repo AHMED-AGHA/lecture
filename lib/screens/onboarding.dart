@@ -37,7 +37,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             physics: const BouncingScrollPhysics(),
             controller: _pageController,
             itemCount: onboardingItems.length,
-            itemBuilder: (BuildContext context, int index) {
+            itemBuilder: (context, index) {
               return _buildOnboardingItem(onboardingItems[index]);
             },
             onPageChanged: (int index) {
@@ -93,10 +93,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return CirclePageIndicator(
       size: 8.0,
       selectedSize: 12.0,
-      dotSpacing: 12.0,
-      itemCount: onboardingItems.length,
       dotColor: Colors.grey,
       selectedDotColor: const Color(0xffF24C3D),
+      dotSpacing: 12.0,
+      itemCount: onboardingItems.length,
       currentPageNotifier: _currentPageNotifier,
     );
   }

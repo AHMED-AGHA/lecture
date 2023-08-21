@@ -23,9 +23,37 @@ class _ProgressIndicatorsState extends State<ProgressIndicators> {
             //   color: Colors.green,
             //   strokeWidth: 1,
             // ),
-            LoadingAnimationWidget.fourRotatingDots(color: Colors.deepOrangeAccent, size: 80)
-          ],
+            // CircularProgressIndicator(
+            //   color: Colors.green,
+            //   strokeWidth: 1.0,
+            // )
+            GestureDetector(
+              onTap: () {
+                print("Hello World");
+              },
+              child: Text("Press Me"),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            CircularProgressIndicator(),
+            SizedBox(
+              height: 50,
+            ),
+            LoadingAnimationWidget.inkDrop(
+                color: Colors.deepOrangeAccent, size: 80),
+            SizedBox(
+              height: 50,
+            ),
+            LoadingAnimationWidget.fourRotatingDots(
+                color: Colors.deepOrangeAccent, size: 80),
 
+            SizedBox(
+              height: 50,
+            ),
+            LoadingAnimationWidget.discreteCircle(
+                color: Colors.redAccent, size: 50)
+          ],
         ),
       ),
     );

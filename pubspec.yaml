@@ -40,6 +40,8 @@ dependencies:
   calendar_date_picker2: ^0.3.6
   intl: ^0.17.0
   page_view_indicators: ^2.0.0
+  shared_preferences: ^2.1.2
+
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
@@ -78,10 +81,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Archivo
+      fonts:
+        - asset: assets/fonts/ArchivoNarrow-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

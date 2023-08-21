@@ -23,11 +23,12 @@ class _ListTileWidgetState extends State<ListTileWidget> {
                 Icons.question_answer,
                 color: Color(0xff586BCA),
               ),
-              backgroundColor: Colors.white,
-              collapsedIconColor: const Color(0xff586BCA), // closed
-              iconColor: const Color(0xff586BCA),//open
-             collapsedBackgroundColor: const Color(0xff8FA1B4),
-              collapsedTextColor: Colors.white,
+              backgroundColor: Colors.red,
+              collapsedBackgroundColor: Colors.amber,
+              collapsedIconColor: Colors.black,
+              iconColor: Colors.blue,
+              collapsedTextColor: Colors.red,
+              textColor: Colors.black,
               title: Text(
                 'Question #1',
                 style: GoogleFonts.cairo(
@@ -36,11 +37,11 @@ class _ListTileWidgetState extends State<ListTileWidget> {
               expandedAlignment: Alignment.topLeft,
               childrenPadding:
                   const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              textColor: Colors.black,
-              //initiallyExpanded: true,
+              initiallyExpanded: false,
               children: [
                 Text('Answer #1',
-                    style: GoogleFonts.cairo(fontWeight: FontWeight.w400))
+                    style: GoogleFonts.cairo(
+                        fontWeight: FontWeight.w400, color: Colors.white)),
               ],
             ),
           ),
@@ -67,15 +68,15 @@ class _ListTileWidgetState extends State<ListTileWidget> {
               childrenPadding:
                   const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               textColor: Colors.red,
-               initiallyExpanded: true,
+              initiallyExpanded: true,
               children: [
                 Text(
                     'An expansion tile in flutter is almost similar to the ListTile which you may have already used in list view but the only difference is that the user can expand or collapse the tile to view more details about the tile. You can see the example of an expansion tile in the above image.',
-                    style: GoogleFonts.cairo(fontWeight: FontWeight.w600,fontSize: 14))
+                    style: GoogleFonts.cairo(
+                        fontWeight: FontWeight.w600, fontSize: 14))
               ],
             ),
           ),
-
         ],
       ),
     );

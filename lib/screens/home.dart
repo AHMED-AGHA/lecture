@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lecture4/screens/login.dart';
+import 'package:lecture4/screens/tabbar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -27,8 +27,9 @@ class _HomeState extends State<Home> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 20,),
-
+          const SizedBox(
+            height: 20,
+          ),
           Center(
             child: Container(
               width: 350,
@@ -48,7 +49,9 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Container(
             width: 350,
             height: 200,
@@ -66,7 +69,9 @@ class _HomeState extends State<Home> {
                   color: const Color(0xffECF8F9)),
             ),
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Container(
             width: 350,
             height: 200,

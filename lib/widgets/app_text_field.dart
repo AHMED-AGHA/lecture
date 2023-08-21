@@ -18,9 +18,9 @@ class AppTextFiled extends StatelessWidget {
       final void Function(String value)? onSubmitted,
       final void Function(String value)? onChange,
       final void Function()? onPreesed,
-      Color? colorHint = Colors.white,
+      Color? colorHint = Colors.redAccent,
       required Color color_floatingLabelStyle,
-      Color? colorBorder = Colors.white})
+      Color? colorBorder = Colors.redAccent})
       : _editingController = editingController,
         _hint = hint,
         _prefixIcon = prefixIcon,
@@ -82,6 +82,7 @@ class AppTextFiled extends StatelessWidget {
       onSubmitted: _onSubmitted,
       decoration: InputDecoration(
         labelText: _hint,
+        //hintText: _hint,
         contentPadding: EdgeInsets.only(top: 0, bottom: 0, left: 10),
         floatingLabelStyle: TextStyle(
             color: _color_floatingLabelStyle,
@@ -92,12 +93,12 @@ class AppTextFiled extends StatelessWidget {
           color: _colorHint,
         ),
         counterText: '',
-        // hintStyle: GoogleFonts.dmSans(
-        //     fontSize: 16.sp,
-        //     fontWeight: FontWeight.w500,
-        //     color: _colorHint),
-        // prefixIcon: Icon(_prefixIcon,
-        //     size: 24, color: const Color(0xff1B2A3B).withOpacity(0.4)),
+        hintStyle: GoogleFonts.dmSans(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            color: _colorHint),
+        prefixIcon: Icon(_prefixIcon,
+            size: 24, color: const Color(0xff1B2A3B).withOpacity(0.4)),
         suffixIcon: IconButton(
           icon: Icon(
             _sufixIcon,

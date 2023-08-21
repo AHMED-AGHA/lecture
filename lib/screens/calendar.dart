@@ -24,6 +24,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
+
               date,
               style: GoogleFonts.archivo(
                   fontWeight: FontWeight.bold, fontSize: 22),
@@ -39,6 +40,8 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {}, child: Icon(Icons.safety_check)),
     );
   }
 
@@ -54,7 +57,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     if (results != null) {
       if (mounted) {
         setState(() {
-         // date = DateFormat.yMd().format(results.first!);//
+          // date = DateFormat.yMd().format(results.first!);//
           date = DateFormat('yyyy-MM-dd').format(results.first!);
         });
       }

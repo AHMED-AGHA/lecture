@@ -4,7 +4,6 @@ import 'package:lecture4/model/onBoardingItemList.dart';
 import 'package:lecture4/screens/on_boarding_indicator.dart';
 import 'package:lecture4/widgets/on_boarding_content.dart';
 
-
 class OnBoardingScreen2 extends StatefulWidget {
   const OnBoardingScreen2({Key? key}) : super(key: key);
 
@@ -61,22 +60,21 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
             ),
             Expanded(
                 child: PageView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  controller: _pageController,
-                  scrollDirection: Axis.horizontal,
-                  onPageChanged: (int pageIndex) {
-                    setState(() {
-                      _currentPageIndex = pageIndex;
-                    });
-                  },
-                  itemCount: onboardingItems2.length,
-                  itemBuilder: (context, index) {
-                    return OnBoardingContent(
-                      onboardingItem2: onboardingItems2[index],);
-                  },
-                )
-            ),
-
+              physics: const BouncingScrollPhysics(),
+              controller: _pageController,
+              // scrollDirection: Axis.horizontal,
+              onPageChanged: (int pageIndex) {
+                setState(() {
+                  _currentPageIndex = pageIndex;
+                });
+              },
+              itemCount: onboardingItems2.length,
+              itemBuilder: (context, index) {
+                return OnBoardingContent(
+                  onboardingItem2: onboardingItems2[index],
+                );
+              },
+            )),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -131,7 +129,9 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Visibility(
               maintainState: true,
               maintainAnimation: true,
@@ -141,12 +141,10 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Color(0xff6A90F2),
+                      backgroundColor: Color(0xff6A90F2),
                       minimumSize: Size(double.infinity, 45),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(22.5)
-                      )
-                  ),
+                          borderRadius: BorderRadius.circular(22.5))),
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/login_screen');
                   },

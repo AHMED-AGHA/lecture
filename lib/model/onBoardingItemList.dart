@@ -20,6 +20,13 @@ final List<OnboardingItem> onboardingItems = [
   ),
 ];
 
+
+
+
+
+
+
+
 final List<OnboardingItem2> onboardingItems2 = [
   OnboardingItem2(
     'Simply',

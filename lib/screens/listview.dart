@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lecture4/screens/polymerphism.dart';
 
 class ListViews extends StatefulWidget {
   const ListViews({Key? key}) : super(key: key);
@@ -15,20 +16,36 @@ class _ListViewsState extends State<ListViews> {
       appBar: AppBar(
         title: const Text('ListView'),
       ),
+      body: Column(
+        children: [
+          ListView.builder(
+              itemCount: 5,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    title: Text("Vision Plus"),
+                    subtitle: Text("Vision Plus"),
+                    leading: Icon(Icons.person),
+                    trailing: Icon(Icons.delete),
+                  ),
+                );
+              }),
+        ],
+      ),
       drawer: Drawer(
-        elevation: 0,
         child: ListView(
-          children: [buildHeader(context), builedItem(context)],
+          children: [
+            buildHeader(context),
+            builedItem(context)
+          ],
         ),
       ),
     );
   }
 
-  Widget buildHeader(BuildContext context) =>
-      InkWell(
-        onTap: (){
-
-        },
+  Widget buildHeader(BuildContext context) => InkWell(
+        onTap: () {},
         child: Container(
           color: Colors.blueAccent,
           padding: EdgeInsets.only(top: 20),
@@ -49,7 +66,9 @@ class _ListViewsState extends State<ListViews> {
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 6,),
+              const SizedBox(
+                height: 6,
+              ),
               Text(
                 'ahmed.m.j.agha@hotmail.com',
                 style: GoogleFonts.archivo(
@@ -57,7 +76,9 @@ class _ListViewsState extends State<ListViews> {
                     color: Colors.white,
                     fontWeight: FontWeight.w500),
               ),
-              const SizedBox(height: 12,)
+              const SizedBox(
+                height: 12,
+              )
             ],
           ),
         ),
@@ -75,7 +96,7 @@ class _ListViewsState extends State<ListViews> {
             onTap: () {
               // do something
               Navigator.pop(context);
-              Navigator.pushNamed(context, '/login_screen');
+              Navigator.pushNamed(context, '/Home_screen');
             },
           ),
           ListTile(

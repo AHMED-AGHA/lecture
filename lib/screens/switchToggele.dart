@@ -17,6 +17,21 @@ class _MySwitchToggleState extends State<MySwitchToggle> {
       ),
       body: Column(
         children: [
+          Switch(
+            // activeColor: Colors.green,
+            // activeTrackColor: Colors.redAccent,
+            // inactiveThumbColor: Colors.amber,
+            // inactiveTrackColor: Colors.blue,
+            value: _isSwitched,
+            onChanged: (bool value) {
+              setState(() {
+                _isSwitched = !_isSwitched;
+              });
+            },
+          ),
+          SizedBox(
+            height: 80,
+          ),
           Card(
             child: ListTile(
               onTap: () => selectedItem(),
@@ -39,6 +54,7 @@ class _MySwitchToggleState extends State<MySwitchToggle> {
       ),
     );
   }
+
   selectedItem() {
     setState(() {
       _isSwitched = !_isSwitched;

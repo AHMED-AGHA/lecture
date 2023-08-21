@@ -7,13 +7,14 @@ class MyRadioButtons extends StatefulWidget {
 }
 
 class _MyRadioButtonsState extends State<MyRadioButtons> {
-  String _selectedOption = '';
+  String? _selectedOption;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Radio Buttons Example'),
+        elevation: 0,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,34 +22,35 @@ class _MyRadioButtonsState extends State<MyRadioButtons> {
           Card(
             child: ListTile(
               onTap: () {
-                setState(() {
-                  _selectedOption = 'Male';
-                });
+                onItemClicked('Male');
+                // setState(() {
+                //   _selectedOption = 'Male';
+                // });
               },
               title: Text(
                 'Male',
-                style: GoogleFonts.cairo(
+                style: GoogleFonts.archivo(
                     fontWeight: FontWeight.bold, fontSize: 18),
               ),
               leading: Radio(
                   value: 'Male',
                   groupValue: _selectedOption,
                   onChanged: (String? value) {
-                    onItemClicked(value);
-
+                    setState(() {
+                      print(value);
+                      _selectedOption = value;
+                    });
                   }),
             ),
           ),
           Card(
             child: ListTile(
               onTap: () {
-                setState(() {
-                  _selectedOption = 'Female';
-                });
+                onItemClicked('Female');
               },
               title: Text(
                 'Female',
-                style: GoogleFonts.cairo(
+                style: GoogleFonts.archivo(
                     fontWeight: FontWeight.bold, fontSize: 18),
               ),
               leading: Radio(
